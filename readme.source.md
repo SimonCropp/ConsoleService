@@ -10,4 +10,4 @@ https://nuget.org/packages/ConsoleService/ [![NuGet Status](https://badgen.net/n
 
 ## Icon
 
-[Gerrymandering](https://thenounproject.com/term/gerrymandering/15219/) designed by [Iconathon](https://thenounproject.com/Iconathon1) from [The Noun Project](https://thenounproject.com).
+[Abstract](https://thenounproject.com/browse/?i=2703165) designed by [BÖCK](https://thenounproject.com/titaniclast/) from [The Noun Project](https://thenounproject.com).
