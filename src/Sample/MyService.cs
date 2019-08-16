@@ -2,15 +2,16 @@
 using System.Threading.Tasks;
 using ConsoleService;
 
-class MyService : ProgramService
+class MyService :
+    ProgramService
 {
     protected override Task OnStartAsync(string[] args, CancellationToken cancellation)
     {
-        return Task.Delay(2000, cancellation);
+        return Task.Delay(1000, cancellation);
     }
 
     protected override Task OnStopAsync()
     {
-        return Task.Delay(10000);
+        return Task.Delay(20000);
     }
 }
