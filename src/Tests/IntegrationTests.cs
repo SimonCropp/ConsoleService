@@ -29,13 +29,16 @@ public class IntegrationTests :
         }
     }
 
-    //[Fact]
-    //public void Install()
-    //{
-    //    SampleInstaller.Delete();
-    //    SampleInstaller.Create();
-    //}
     [Fact]
+    [Trait("Category", "Integration")]
+    public void Install()
+    {
+        SampleInstaller.Delete();
+        SampleInstaller.Create();
+    }
+
+    [Fact]
+    [Trait("Category", "Integration")]
     public void RunAsService()
     {
         SampleInstaller.Delete();
