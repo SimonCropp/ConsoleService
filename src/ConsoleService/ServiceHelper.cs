@@ -8,7 +8,8 @@ static class ServiceHelper
     {
         using (var process = GetParent(Process.GetCurrentProcess()))
         {
-            return process != null && process.ProcessName == "services";
+            return process != null &&
+                   process.ProcessName == "services";
         }
     }
 
@@ -18,7 +19,8 @@ static class ServiceHelper
         while (true)
         {
             var input = Console.ReadKey(true);
-            if (input.Key == ConsoleKey.C && input.Modifiers == ConsoleModifiers.Control)
+            if (input.Key == ConsoleKey.C &&
+                input.Modifiers == ConsoleModifiers.Control)
             {
                 break;
             }
@@ -65,16 +67,16 @@ static class ServiceHelper
     static uint TH32CS_SNAPPROCESS = 2;
 
     [DllImport("kernel32.dll")]
-    public static extern bool Process32Next(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
+    static extern bool Process32Next(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
 
     [DllImport("kernel32.dll", SetLastError = true)]
-    public static extern IntPtr CreateToolhelp32Snapshot(uint dwFlags, uint th32ProcessID);
+    static extern IntPtr CreateToolhelp32Snapshot(uint dwFlags, uint th32ProcessID);
 
     [DllImport("kernel32.dll")]
-    public static extern bool Process32First(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
+    static extern bool Process32First(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
 
     [StructLayout(LayoutKind.Sequential)]
-    public struct PROCESSENTRY32
+    struct PROCESSENTRY32
     {
         public uint dwSize;
         public uint cntUsage;

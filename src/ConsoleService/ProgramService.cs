@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Reflection;
 using System.Runtime.ExceptionServices;
 using System.ServiceProcess;
 using System.Threading;
@@ -20,22 +19,9 @@ namespace ConsoleService
         ExceptionDispatchInfo startException;
         ExceptionDispatchInfo stopException;
 
-        public ProgramService()
+        protected ProgramService()
         {
-            var type = GetType();
-            var bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic;
-            var onStart = type.GetMethod("OnStart", bindingFlags, null, new[] {typeof(string[])}, null);
-            EnsureNotOverriden(onStart);
-            var onStop = type.GetMethod("OnStop", bindingFlags);
-            EnsureNotOverriden(onStop);
-        }
-
-        static void EnsureNotOverriden(MethodInfo method)
-        {
-            if (method.DeclaringType != typeof(ProgramService))
-            {
-                throw new Exception("Do not override OnStart or OnStop. Instead place that code in OnStartAsync and OnStopAsync");
-            }
+            OverrideValidator.Validate(this);
         }
 
         protected override void OnStart(string[] args)

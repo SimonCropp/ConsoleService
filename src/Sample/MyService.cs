@@ -12,6 +12,6 @@ class MyService :
 
     protected override Task OnStopAsync()
     {
-        return Task.Delay(20000);
+        return Task.Delay(2000);
     }
 }
