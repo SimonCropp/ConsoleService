@@ -6,10 +6,11 @@ static class ServiceHelper
 {
     public static bool IsService()
     {
-        using (var process = GetParent(Process.GetCurrentProcess()))
+        using (var current = Process.GetCurrentProcess())
+        using (var parent = GetParent(current))
         {
-            return process != null &&
-                   process.ProcessName == "services";
+            return parent != null &&
+                   parent.ProcessName == "services";
         }
     }
 

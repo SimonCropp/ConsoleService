@@ -12,7 +12,6 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.18" PrivateAssets="All" />
-
     <ProjectReference Include="..\ConsoleService\ConsoleService.csproj" />
   </ItemGroup>
 </Project>

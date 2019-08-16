@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleService
 {
-    public abstract class ServiceStarter
+    public static class ServiceStarter
     {
         public static async Task Start<T>()
             where T : ProgramService, new()
