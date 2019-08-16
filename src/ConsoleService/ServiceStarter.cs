@@ -18,7 +18,7 @@ namespace ConsoleService
                 }
 
                 Console.Title = service.ServiceName;
-                Console.WriteLine("Press Ctrl-C to Exit");
+                Console.WriteLine($"{service.ServiceName} - Press Ctrl-C to Exit");
                 await service.OnStartAsync(Environment.GetCommandLineArgs(), service.tokenSource.Token);
                 ServiceHelper.BlockUntilControlC();
                 await service.OnStopAsync();
