@@ -15,7 +15,7 @@ namespace ConsoleService
         Task stopAsync;
         internal CancellationTokenSource tokenSource = new CancellationTokenSource();
         ManualResetEvent startResetEvent = new ManualResetEvent(false);
-        ManualResetEvent stopResetEvent = new ManualResetEvent(false);
+        ManualResetEvent stopResetEvent;
         ExceptionDispatchInfo startException;
         ExceptionDispatchInfo stopException;
 
@@ -51,6 +51,7 @@ namespace ConsoleService
         protected override void OnStop()
         {
             tokenSource.Cancel();
+            stopResetEvent = new ManualResetEvent(false);
             stopAsync = StopAsync();
             stopResetEvent.WaitOne();
             stopException?.Throw();
