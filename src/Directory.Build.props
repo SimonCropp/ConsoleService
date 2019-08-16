@@ -4,5 +4,6 @@
     <Version>0.1.0</Version>
     <PackageTags>Windows Service, Console, Async</PackageTags>
     <Description>Enables a console app to be simply run on the command line or as a Windows Service.</Description>
+    <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
 </Project>

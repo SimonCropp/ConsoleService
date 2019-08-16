@@ -22,6 +22,7 @@ namespace ConsoleService
         protected ProgramService()
         {
             OverrideValidator.Validate(this);
+            ServiceName = GetType().Assembly.GetName().Name;
         }
 
         protected override void OnStart(string[] args)
