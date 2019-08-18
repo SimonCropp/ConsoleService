@@ -4,10 +4,11 @@ using System.Text;
 
 static class SampleInstaller
 {
-    public static void Create()
+    public static void Create(string name, string assembly)
     {
-        Run($"create WindowsServiceSample binpath= \"dotnet {SampleLocation.SampleAssembly}\"");
+        Run($"create {name} binpath= \"dotnet {assembly}\"");
     }
+
     public static void Start()
     {
         Run("start WindowsServiceSample");
@@ -16,15 +17,10 @@ static class SampleInstaller
     {
         Run("stop WindowsServiceSample");
     }
-    public static void Delete()
+
+    public static void Delete(string name)
     {
-        try
-        {
-            Run("delete WindowsServiceSample");
-        }
-        catch
-        {
-        }
+        Run($"delete {name}");
     }
 
     static void Run(string arguments)

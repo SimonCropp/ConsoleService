@@ -14,7 +14,9 @@ static class SampleLocation
         var directory = Path.GetDirectoryName(path);
 
         SampleAssembly = Path.Combine(directory.Replace("Tests", "Sample"), "Sample.dll");
+        TestsAssembly = Path.Combine(directory, "Tests.dll");
     }
 
     public static string SampleAssembly;
+    public static string TestsAssembly;
 }

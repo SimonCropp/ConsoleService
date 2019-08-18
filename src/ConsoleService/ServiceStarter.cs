@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ServiceProcess;
 using System.Threading.Tasks;
 
 namespace ConsoleService
@@ -26,3 +25,15 @@ namespace ConsoleService
         }
     }
 }
+    public enum PowerBroadcastStatus
+    {
+        BatteryLow          = PowerBroadcastStatusInner.PBT_APMBATTERYLOW,
+         OemEvent            = PowerBroadcastStatusInner.PBT_APMOEMEVENT,
+         PowerStatusChange   = PowerBroadcastStatusInner.PBT_APMPOWERSTATUSCHANGE,
+         QuerySuspend        = PowerBroadcastStatusInner.PBT_APMQUERYSUSPEND,
+         QuerySuspendFailed  = PowerBroadcastStatusInner.PBT_APMQUERYSUSPENDFAILED,
+         ResumeAutomatic     = PowerBroadcastStatusInner.PBT_APMRESUMEAUTOMATIC,
+         ResumeCritical      = PowerBroadcastStatusInner.PBT_APMRESUMECRITICAL,
+         ResumeSuspend       = PowerBroadcastStatusInner.PBT_APMRESUMESUSPEND,
+         Suspend             = PowerBroadcastStatusInner.PBT_APMSUSPEND,
+     }

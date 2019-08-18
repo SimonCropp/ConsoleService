@@ -33,16 +33,16 @@ public class IntegrationTests :
     [Trait("Category", "Integration")]
     public void Install()
     {
-        SampleInstaller.Delete();
-        SampleInstaller.Create();
+        SampleInstaller.Delete("WindowsServiceSample");
+        SampleInstaller.Create("WindowsServiceSample", SampleLocation.SampleAssembly);
     }
 
     [Fact]
     [Trait("Category", "Integration")]
     public void RunAsService()
     {
-        SampleInstaller.Delete();
-        SampleInstaller.Create();
+        SampleInstaller.Delete("WindowsServiceSample");
+        SampleInstaller.Create("WindowsServiceSample", SampleLocation.SampleAssembly);
         using (var controller = GetController())
         {
             Assert.Equal(ServiceControllerStatus.Stopped, controller.Status);
@@ -57,7 +57,7 @@ public class IntegrationTests :
             controller.Refresh();
             Assert.Equal(ServiceControllerStatus.Stopped, controller.Status);
 
-            SampleInstaller.Delete();
+            SampleInstaller.Delete("WindowsServiceSample");
         }
     }
 
