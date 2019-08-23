@@ -10,8 +10,8 @@ class MyService :
         return Task.Delay(1000, cancellation);
     }
 
-    protected override Task OnStopAsync()
+    protected override Task OnStopAsync(CancellationToken cancellationToken)
     {
-        return Task.Delay(2000);
+        return Task.Delay(2000, cancellationToken);
     }
 }

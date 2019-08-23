@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.ServiceProcess;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,27 +10,47 @@ namespace ConsoleService
     public abstract class ProgramService :
         ServiceBase
     {
-        internal CancellationTokenSource TokenSource = new CancellationTokenSource();
+        private static readonly TimeSpan DefaultServiceTimeout = TimeSpan.FromSeconds(30);
+        private CancellationTokenSource startTokenSource;
+        private CancellationTokenSource stopTokenSource;
 
         protected ProgramService()
         {
-            OverrideValidator.Validate(this);
             ServiceName = GetType().Assembly.GetName().Name;
         }
 
-        protected override void OnStart(string[] args)
+        protected sealed override void OnStart(string[] args)
         {
-            OnStartAsync(args, TokenSource.Token).GetAwaiter().GetResult();
+            StartAsync(args).GetAwaiter().GetResult();
         }
 
-        protected internal abstract Task OnStartAsync(string[] args, CancellationToken cancellation);
-
-        protected override void OnStop()
+        internal Task StartAsync(string[] args)
         {
-            TokenSource.Cancel();
-            OnStopAsync().GetAwaiter().GetResult();
+            startTokenSource = new CancellationTokenSource(DefaultServiceTimeout);
+            return OnStartAsync(args, startTokenSource.Token);
         }
 
-        protected internal abstract Task OnStopAsync();
+        internal Task StopAsync()
+        {
+            stopTokenSource = new CancellationTokenSource(DefaultServiceTimeout);
+            return OnStopAsync(stopTokenSource.Token);
+        }
+
+        protected abstract Task OnStartAsync(string[] args, CancellationToken cancellation);
+
+        protected sealed override void OnStop()
+        {
+            StopAsync().GetAwaiter().GetResult();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            startTokenSource?.Dispose();
+            stopTokenSource?.Dispose();
+        }
+
+        protected abstract Task OnStopAsync(CancellationToken cancellation);
     }
 }

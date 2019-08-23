@@ -1,1 +1,0 @@
-﻿Do not override OnStart or OnStop. Instead place that code in OnStartAsync and OnStopAsync
