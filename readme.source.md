@@ -1,4 +1,4 @@
-# <img src="/src/icon.png" height="40px"> ConsoleService
+# <img src="/src/icon.png" height="30px"> ConsoleService
 
 [![Build status](https://ci.appveyor.com/api/projects/status/po3f87h1mr4jnu7n/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/ConsoleService/branch/master) [![NuGet Status](http://img.shields.io/nuget/v/ConsoleService.svg?cacheSeconds=86400)](https://www.nuget.org/packages/ConsoleService/)
 
