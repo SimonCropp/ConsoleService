@@ -7,7 +7,7 @@ using Xunit;
 using Xunit.Abstractions;
 
 public class IntegrationTests :
-    XunitLoggingBase
+    XunitApprovalBase
 {
     [Fact]
     public void RunAsConsole()
