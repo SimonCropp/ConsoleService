@@ -10,9 +10,9 @@ namespace ConsoleService
     public abstract class ProgramService :
         ServiceBase
     {
-        private static readonly TimeSpan DefaultServiceTimeout = TimeSpan.FromSeconds(30);
-        private CancellationTokenSource startTokenSource;
-        private CancellationTokenSource stopTokenSource;
+        static TimeSpan DefaultServiceTimeout = TimeSpan.FromSeconds(30);
+        CancellationTokenSource? startTokenSource;
+        CancellationTokenSource? stopTokenSource;
 
         protected ProgramService()
         {

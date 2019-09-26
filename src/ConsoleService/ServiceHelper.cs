@@ -28,7 +28,7 @@ static class ServiceHelper
         }
     }
 
-    static Process GetParent(Process child)
+    static Process? GetParent(Process child)
     {
         var parentId = 0;
 
