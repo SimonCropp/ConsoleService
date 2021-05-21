@@ -2,8 +2,6 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/po3f87h1mr4jnu7n/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/ConsoleService) [![NuGet Status](https://img.shields.io/nuget/v/ConsoleService.svg?cacheSeconds=86400)](https://www.nuget.org/packages/ConsoleService/)
 
-toc
-
 
 ## NuGet
 

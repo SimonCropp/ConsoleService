@@ -4,8 +4,8 @@
     <OutputType>exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.ServiceProcess.ServiceController" Version="4.7.0" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.42" PrivateAssets="All" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="5.0.0" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.54" PrivateAssets="All" />
     <ProjectReference Include="..\ConsoleService\ConsoleService.csproj" />
   </ItemGroup>
 </Project>

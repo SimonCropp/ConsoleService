@@ -3,16 +3,16 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ApprovalTests" Version="5.1.0" />
+    <PackageReference Include="ApprovalTests" Version="5.4.7" />
     <PackageReference Include="ObjectApproval" Version="11.2.1" />
-    <PackageReference Include="System.ServiceProcess.ServiceController" Version="4.7.0" />
-    <PackageReference Include="MarkdownSnippets.MsBuild" Version="18.0.0" PrivateAssets="all" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="5.0.0" />
+    <PackageReference Include="MarkdownSnippets.MsBuild" Version="23.1.3" PrivateAssets="all" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="XunitLogger" Version="4.6.0" />
     <PackageReference Include="Xunit.ApprovalTests" Version="3.1.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.42" PrivateAssets="All" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.54" PrivateAssets="All" />
     <ProjectReference Include="..\ConsoleService\ConsoleService.csproj" />
   </ItemGroup>
 </Project>
