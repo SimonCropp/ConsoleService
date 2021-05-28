@@ -11,7 +11,7 @@
     <PackageReference Include="XunitLogger" Version="4.6.0" />
     <PackageReference Include="Xunit.ApprovalTests" Version="3.1.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.54" PrivateAssets="All" />
     <ProjectReference Include="..\ConsoleService\ConsoleService.csproj" />
   </ItemGroup>
